@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,6 +17,8 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "VC-Room",
   description: "A Video Conference Web Based Application",
+  keywords: "Video Conference, Web Based Application",
+  
 };
 
 export default function RootLayout({
@@ -25,11 +28,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} bg-dark-2 ${geistMono.variable} antialiased`}
-      >
+      <link rel="icon" href="/icons/logo.svg" sizes="any" />
+      <ClerkProvider
+      appearance={{
+        layout:{
+          logoImageUrl: '/icons/logo.svg'
+        },
+        variables:{
+          colorText: '#fff',
+          colorPrimary: '#0E78F9',
+          colorBackground: '#1C1F2E',
+          colorInputBackground:'#252A41',
+          colorInputText: '#FFF',
+        },
+      }}
+    >
+      <body className={`${geistSans.variable} bg-dark-2 ${geistMono.variable} antialiased`}>
         {children}
       </body>
+      </ClerkProvider>
     </html>
   );
 }
