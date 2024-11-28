@@ -18,15 +18,16 @@ const Navbar = () => {
         <p className='text-[26px] font-extrabold text-white max:sm:hidden'>VC - ROOM</p>
       </Link>
 
-      <div className='flex-between gap-5'>
-        <ClerkProvider>
+      <div className='flex justify-between items-center gap-5 signInBtn'>
             <SignedOut>
               <SignInButton />
             </SignedOut>
             <SignedIn>
               <UserButton />
             </SignedIn>
-        </ClerkProvider>
+
+
+
         <MobileNav/>
 
       </div>
