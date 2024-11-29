@@ -1,9 +1,7 @@
 import React, { ReactNode } from 'react'
 
-import {
-    Dialog,
-    DialogContent,
-  } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle} from "@/components/ui/dialog"
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
 import { Button } from './ui/button'
@@ -39,6 +37,12 @@ const MeetingModal = ({isOpen, onClose, title, className, children, handleClick,
                     )} &nbsp;
                     {buttonText || 'Schedule Meeting'}</Button>
             </div>
+
+            <VisuallyHidden>
+                <DialogTitle>My Dialog</DialogTitle>
+            </VisuallyHidden>
+            {/* Other content */}
+
         </DialogContent>
     </Dialog>
 
