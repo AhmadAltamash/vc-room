@@ -8,6 +8,7 @@ import { useUser } from '@clerk/nextjs'
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk'
 import { useToast } from "@/hooks/use-toast"
 import { Textarea } from './ui/textarea'
+import ReactDatePicker from 'react-datepicker'
 
 
 const MeetingTypeList = () => {
@@ -27,6 +28,8 @@ const MeetingTypeList = () => {
 
     const {user} = useUser();
     const client = useStreamVideoClient()
+
+    const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`
 
     const createMeeting = async () => {
         if(!client || !user) return;
@@ -115,6 +118,22 @@ const MeetingTypeList = () => {
             onChange={(e) => setValue({...value, description: e.target.value})}
             />
            </div>
+        
+           <div className='flex w-full flex-col gap-2.5'>
+           <label className='text-base text-normal leading-[22px] text-sky-2'>Select Date and Time</label>
+           <ReactDatePicker
+            selected={value.dateTime}
+            onChange={(date)=> setValue({...value, dateTime: date!})}
+            showTimeSelect
+            timeFormat='HH:mm'
+            timeIntervals={15}
+            timeCaption='time'
+            dateFormat='MMMM d, yyyy h:mm aa'
+            className='w-full rounded bg-dark-3 p-2 focus:outline-none'
+           />
+            </div>
+            
+
         </MeetingModal>
         ) : (
         <MeetingModal
@@ -123,8 +142,8 @@ const MeetingTypeList = () => {
             onClose={() => setMeetingState(undefined)}
             title='Meeting Created'
             handleClick={() =>{
-                // navigator.clipboard.writeText(meetingLink)
-                // toast({title: 'Link Copied to Clipboard'})
+                navigator.clipboard.writeText(meetingLink)
+                toast({title: 'Link Copied to Clipboard'})
             }}
             image='/icons/checked.svg'
             buttonIcon='/icons/copy.svg'
