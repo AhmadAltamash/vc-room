@@ -4,7 +4,7 @@ import React from 'react'
 const SignInPage = () => {
   return (
     <main className='relative w-screen'>
-        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-24'>
+        <div className='absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-24'>
             <SignIn/>
         </div>
     </main>

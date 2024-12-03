@@ -1,4 +1,3 @@
-// @ts-nocheck
 'use client'
 import { useRouter } from 'next/navigation';
 import { useGetCalls } from '../../hooks/useGetCalls'
@@ -52,9 +51,9 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
             const recordings = callData
             .filter((call) => call.recordings.length > 0)
             .flatMap((call) => call.recordings);
-        
             setRecordings(recordings);
         } catch (error) {
+          console.log(error)
             toast({ title: 'Try Again Later'})
         }
       };
@@ -62,7 +61,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
       if (type === 'recordings') {
         fetchRecordings();
       }
-    }, [type, callRecordings]);
+    }, [type, callRecordings, toast]);
   
     if (isLoading) return <Loader />;
   
@@ -74,7 +73,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
         {calls && calls.length > 0 ? (
           calls.map((meeting: Call | CallRecording, index: number) => (
             <MeetingCard
-            key={(meeting as Call).id || (meeting as CallRecording).id || index}
+            key={(meeting as Call).id || index}
               icon={
                 type === 'ended'
                   ? '/icons/previous.svg'

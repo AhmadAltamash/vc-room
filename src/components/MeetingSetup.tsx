@@ -22,7 +22,7 @@ const MeetingSetup = ({setIsSetupComplete}:{setIsSetupComplete: (value:boolean)=
   
 
   return (
-    <div className='h-screen w-full flex flex-col items-center justify-center gap-3 text-white'>
+    <div className='flex h-screen w-full flex-col items-center justify-center gap-3 text-white'>
       <h1 className='text-2xl font-bold'>Setup</h1>
       <VideoPreview/>
 
