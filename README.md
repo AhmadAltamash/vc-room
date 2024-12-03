@@ -107,4 +107,4 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-or, You Can also Checkout My Deployed Project by Following [VC-Room](https://vc-room-seven.vercel.app/)
+or, You Can also Checkout My Deployed Project here [VC-Room](https://vc-room-seven.vercel.app/)
