@@ -1,16 +1,13 @@
-## 📋 <a name="table">Table of Contents</a>
-
-1. 🤖 [Introduction](#introduction)
-2. ⚙️ [Tech Stack](#tech-stack)
-3. 🔋 [Features](#features)
-4. 🤸 [Quick Start](#quick-start)
-5. 🕸️ [Assets & Code](#snippets)
-6. 🚀 [More](#more)
-
-
-## <a name="introduction">🤖 Introduction</a>
+## <a name="introduction">🤖 VC-Room</a>
 
 Built with the latest Next.js and TypeScript, a video-conferencing room, widely used video conferencing tool. It enables users to securely log in, create meetings and access various meeting functionalities such as recording, screen sharing, and managing participants.
+
+## 📋 <a name="table">Table of Contents</a>
+
+1. ⚙️ [Tech Stack](#tech-stack)
+2. 🔋 [Features](#features)
+3. 🤸 [Quick Start](#quick-start)
+
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
