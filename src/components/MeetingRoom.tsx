@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import { DropdownMenu,DropdownMenuContent,DropdownMenuItem,DropdownMenuTrigger, } from "@/components/ui/dropdown-menu"
 import { LayoutList,User } from 'lucide-react'
 import Loader from './Loader'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import EndCallButton from './EndCallButton'
 
 
@@ -24,6 +24,8 @@ const MeetingRoom = () => {
   const { useCallCallingState } = useCallStateHooks()
 
   const callingState = useCallCallingState()
+
+  const router = useRouter()
 
   if(callingState !== CallingState.JOINED) return <Loader/>
 
@@ -54,7 +56,7 @@ const MeetingRoom = () => {
         </div> */}
         <div
           className={cn(
-            'h-[calc(100vh-86px)] ml-2 transition-all',
+            'h-[calc(100vh-86px)] ml-2 transition- bg-dark-1 px-3 py-4 rounded-xl',
             {
               'block': showParticipants,
               'hidden': !showParticipants,
@@ -65,7 +67,7 @@ const MeetingRoom = () => {
         </div>
 
         <div className='fixed bottom-0 flex w-full items-center justify-center gap-5 flex-wrap'>
-          <CallControls/>
+          <CallControls onLeave={() => router.push('/')}/>
 
           <DropdownMenu>
 
