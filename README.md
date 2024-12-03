@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a href="https://vc-room-seven.vercel.app/" target="_blank">
-      <img src="/public/images/homepage.png" alt="Project Banner" style='border-radius: 10px'>
+      <img src="/public/images/homepage.png" alt="Project Banner"/>
     </a>
   <br />
 </div>
