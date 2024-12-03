@@ -1,3 +1,10 @@
+<div align="center">
+  <br />
+    <a href="https://vc-room-seven.vercel.app/" target="_blank">
+      <img src="/public/images/homepage.png" alt="Project Banner">
+    </a>
+  <br />
+</div>
 ## <a name="introduction">📹 VC-Room</a>
 
 Built with the latest Next.js and TypeScript, a video-conferencing room, widely used video conferencing tool. It enables users to securely log in, create meetings and access various meeting functionalities such as recording, screen sharing, and managing participants.
