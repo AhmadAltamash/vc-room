@@ -69,7 +69,7 @@ Make sure you have the following installed on your machine:
 
 ```bash
 git clone https://github.com/AhmadAltamash/vc-room.git
-cd zoom-clone
+cd vc-room
 ```
 
 **Installation**
